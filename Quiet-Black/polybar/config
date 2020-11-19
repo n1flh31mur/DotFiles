@@ -1,0 +1,234 @@
+;-------------------------------------------------;
+;                                                 ;
+;           BrutalWizard Polybar config           ; 
+;                                                 ;
+;        https://github.com/bru74lw1z4rd          ;
+;                                                 ;
+;-------------------------------------------------;
+
+
+[colors]
+; "cf" is for transparency
+background =  #cc030303
+background-alt = #cf404040
+background-unf = #cf404040 
+
+;foreground = ${xrdb:color7:#222}
+foreground = #eed9d9d9
+foreground-alt = #eefafafa
+primary = #56CFE1
+secondary = #ebcb8b
+alert = #e62e00
+
+
+[bar/PolybarBrutalWizard]
+monitor = ${env:MONITOR:}
+
+; Bar settings
+background = transparent;${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+padding = 2
+
+fixed-center = true
+
+width = 100%
+height = 29
+
+border-top-size = 5
+border-bottom-size = 0
+border-color = #00000000
+
+; Make the bar appear below windows
+wm-restack = i3
+;override-redirect = true
+;bottom = true
+
+; Change workspace with scroll
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+; Load fonts
+font-0 = Misc Termsyn:size=8;1
+font-1 = Font Awesome 5 Pro:style=Solid:pixelsize=13;1
+font-2 = Font Awesome 5 Pro:style=Solid:pixelsize=13;1
+font-3 = Font Awesome 5 Brands, Regular:pixelsize=13;1
+font-4 = Material Design Icons Desktop:pixelsize=14;1
+
+; Modules 
+modules-left = i3 
+modules-center = date weather
+modules-right = volume cpu memory wireless-network
+
+module-margin = 1
+
+;tray-position = right
+;tray-padding = 2
+;override-redirect = true
+
+
+[module/i3]
+type = internal/i3
+index-sort = true
+wrapping-scroll = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+; format
+format = <label-state> <label-mode>
+format-background = ${colors.background}
+
+label-mode-padding = 3
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor  
+label-focused = %icon%
+label-focused-underline= #F94144
+label-focused-padding = 3
+
+; unfocused = Inactive workspace on any monitor 
+label-unfocused = %icon% 
+label-unfocused-padding = 3
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon% 
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+format-prefix-foreground = ${colors.foreground-alt}
+
+label = %date% 
+date = "  %A, %d %B %H:%M"
+
+label-background = ${colors.background}
+label-padding = 2
+
+
+[module/weather]
+type = custom/script
+interval = 3600
+exec = python3 ~/.config/polybar/scripts/weather.py
+click-left = python3 ~/.config/polybar/scripts/weather.py
+
+label-background = ${colors.background}
+label-padding = 2
+
+
+[module/volume]
+type = internal/pulseaudio
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+format-muted =  
+format-muted-foreground =  ${colors.foreground}
+format-muted-background = #b3504b
+format-muted-padding = 2
+
+format-volume =  <ramp-volume>  <label-volume> 
+format-volume-padding = 2
+format-volume-foreground = ${colors.foreground}
+format-volume-background = #b3504b
+
+label-volume = "%percentage%%"
+label-volume-padding = 2
+label-volume-foreground = ${colors.foreground}
+label-volume-background = ${colors.background}
+
+
+
+[module/cpu]
+type = internal/cpu
+interval = 10
+format-prefix-foreground = ${colors.foreground-alt}
+
+format-prefix = "  "
+format-padding = 2
+format-foreground = ${colors.foreground}
+format-background = #a08c7d
+
+label = %percentage%%
+label-padding = 2
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+
+[module/memory]
+type = internal/memory
+interval = 10
+format-prefix-foreground = ${colors.foreground-alt}
+
+format-prefix = "  "
+format-padding = 2
+format-foreground = ${colors.foreground}
+format-background = #aec086
+
+label = %percentage_used%%
+label-padding = 2
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+
+[module/wireless-network]
+type = internal/network
+interface = wlp4s0
+interval = 5.0
+format-click-left = "exec nm-connection-editor"
+
+ramp-signal-0 = %{F#ff004b}󰤫%{F-}
+ramp-signal-1 = %{F#ffd200}󰤟%{F-}
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
+ramp-signal-foreground = ${colors.foreground-alt}
+
+format-connected = <ramp-signal>  <label-connected>
+format-connected-padding = 2
+format-connected-foreground = ${colors.foreground}
+format-connected-background = #899593
+
+label-connected = %essid% 
+label-connected-padding = 2
+label-connected-foreground = ${colors.foreground}
+label-connected-background = ${colors.background}
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
