@@ -9,6 +9,9 @@ This is github repository of my i3wm configs
 ## 2. Quiet-Balck
 ![Example 3](/screenshots/Quiet-Black.png)
 
+## 2. Quiet-Purple
+![Example 3](/screenshots/Quiet-Purple.png)
+
 
 ## FireFox Midnight-Purple Theme
 ![Example 3](/screenshots/Firefox-Midnight-Purple.png)
