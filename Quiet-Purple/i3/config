@@ -38,7 +38,7 @@
     bindsym $mod+Print exec gnome-screenshot -i
 
     # Launch polybar
-    exec_always $myconfigfiles/polybar/scripts/launch.sh
+    exec_always sh $myconfigfiles/polybar/launch.sh
 
     # Launch compton 
     exec_always $myconfigfiles/compton/launch.sh
@@ -112,7 +112,7 @@
 # Settings for i3-gaps: https://drive.google.com/file/d/1hy9fR0l-XJBlfykKRTtSCFztR8xABdbX/view 
 
     # Set up gaps
-    gaps inner 8
+    gaps inner 7
     gaps outer 0
 
     # Set up smart gaps
