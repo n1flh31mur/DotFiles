@@ -1,6 +1,6 @@
 ## dotfiles
 
-This is github repository of my i3wm configs 
+This is github repository contains my i3wm configs.
 
 
 ## 1. dotfiles-first-rise
