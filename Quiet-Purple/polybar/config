@@ -92,7 +92,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor  %index%
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= #F94144
+label-focused-underline= #8c33cc
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor %index%
@@ -135,7 +135,7 @@ ramp-volume-2 = 
 ramp-volume-3 = 
 
 format-volume = <ramp-volume> <label-volume> 
-format-volume-underline = #F3722C
+format-volume-underline = #d1adeb 
 
 label-volume = "%percentage%%"
 label-volume-foreground = ${root.foreground}
@@ -167,7 +167,7 @@ type = internal/cpu
 interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #F9C74F
+format-underline = #ba85e0
 label = %percentage%%
 
 
@@ -176,7 +176,7 @@ type = internal/memory
 interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #90BE6D
+format-underline = #af70db
 label = %percentage_used%%
 
 
@@ -187,7 +187,7 @@ interval = 5.0
 click-left = "exec nm-connection-editor"
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #F8961E
+format-connected-underline = #a35cd6
 
 label-connected = %essid% 
 label-connected-foreground = #eefafafa
@@ -297,7 +297,7 @@ type = custom/text
 content = 
 
 ; "content" has the same properties as "format-NAME"
-content-underline = #c63947
+content-underline = #8c33cc
 content-foreground = ${colors.foreground-alt}
 content-padding = 3
 
