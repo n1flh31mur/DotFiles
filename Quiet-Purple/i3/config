@@ -35,10 +35,9 @@
 ############################
 
     # Launch screenshot maker
-    bindsym $mod+Print exec gnome-screenshot -i
-
+    bindsym $mod+Print exec flameshot gui
     # Launch polybar
-    exec_always sh $myconfigfiles/polybar/launch.sh
+    exec_always sh $myconfigfiles/polybar/scripts/launch.sh
 
     # Launch compton 
     exec_always $myconfigfiles/compton/launch.sh
@@ -86,12 +85,12 @@
     bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
     # Set up monitor settings
-    #   exec_always xrandr --primary --output eDP-1-1 --mode 1366x768 --rotate normal --output VGA-1-1 --primary --mode 1920x1080 --pos 1366x0 --rotate normal --output HDMI-1-1 --off
-    exec_always xrandr --output eDP-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1-1 --off --output HDMI-1-1 --off     
+    exec_always  xrandr --output eDP-1-1 --mode 1366x768 --pos 0x456 --rotate normal --output VGA-1-1 --mode 1920x1080 --pos 1366x0 --rotate normal --output HDMI-1-1 --off
+    # exec_always xrandr --output eDP-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1-1 --off --output HDMI-1-1 --off     
     exec_always xrandr --dpi 96
 
     # Set desktop wallpaper
-    exec_always feh --bg-scale /home/brutalwizard/Документы/i3-brutalwizard/wallpaper/anime/2.jpg
+    exec_always feh --bg-scale /home/brutalwizard/Документы/i3-brutalwizard/wallpaper/minimal/16.jpg
 
     # Run live desktop wallpaper  
     #   exec_always $myconfigfiles/animated-wallpaper/run_wallpaper 0.001 $myconfigfiles/animated-wallpaper/pixel.gif
@@ -210,7 +209,7 @@
     bindsym $mod+a focus parent 
 
     # Focus another window
-    bindsym $mod+Left focus left
+    bindsym $mod+Left focus left 
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
