@@ -9,7 +9,7 @@
     set $mod Mod4
 
     # Set path to config files
-    set $myconfigfiles /home/brutalwizard/Документы/i3-brutalwizard
+    set $myconfigfiles /home/brutalwizard/Документы/git/DotFiles/DotFiles/Quiet-Purple/
 
     # Colors
     set $base00 #101218
@@ -36,6 +36,7 @@
 
     # Launch screenshot maker
     bindsym $mod+Print exec flameshot gui
+
     # Launch polybar
     exec_always sh $myconfigfiles/polybar/scripts/launch.sh
 
@@ -86,14 +87,16 @@
 
     # Set up monitor settings
     exec_always  xrandr --output eDP-1-1 --mode 1366x768 --pos 0x456 --rotate normal --output VGA-1-1 --mode 1920x1080 --pos 1366x0 --rotate normal --output HDMI-1-1 --off
-    # exec_always xrandr --output eDP-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1-1 --off --output HDMI-1-1 --off     
+    ## exec_always xrandr --output eDP-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output VGA-1-1 --off --output HDMI-1-1 --off     
+    
+    # Set screen DPI
     exec_always xrandr --dpi 96
 
     # Set desktop wallpaper
-    exec_always feh --bg-scale /home/brutalwizard/Документы/i3-brutalwizard/wallpaper/minimal/16.jpg
+    exec_always feh --bg-scale $myconfigfiles/wallpaper/minimal/17.jpg
 
-    # Run live desktop wallpaper  
-    #   exec_always $myconfigfiles/animated-wallpaper/run_wallpaper 0.001 $myconfigfiles/animated-wallpaper/pixel.gif
+    ## Run live desktop wallpaper  
+    ##   exec_always $myconfigfiles/animated-wallpaper/run_wallpaper 0.001 $myconfigfiles/animated-wallpaper/pixel.gif
 
     # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
     # screen before suspend. Use loginctl lock-session to lock your screen.
