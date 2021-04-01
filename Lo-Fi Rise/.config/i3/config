@@ -9,7 +9,7 @@
     set $mod Mod4
 
     # Set path to config files
-    set $myconfigfiles /home/brutalwizard/Документы/git/DotFiles/DotFiles/Quiet-Purple/
+    set $myconfigfiles /home/brutalwizard/Документы/git/DotFiles/DotFiles/Lo-Fi\ Rise/
 
     # Colors
     set $base00 #101218
@@ -34,11 +34,14 @@
 ### Launch apps on start ###
 ############################
 
+    # Launch notification system
+    exec --no-startup-id "dunst"
+
     # Launch screenshot maker
     bindsym $mod+Print exec flameshot gui
 
     # Launch polybar
-    exec_always sh $myconfigfiles/polybar/scripts/launch.sh
+    exec_always sh $myconfigfiles/polybar/launch.sh
 
     # Launch compton 
     exec_always $myconfigfiles/compton/launch.sh
@@ -93,7 +96,7 @@
     exec_always xrandr --dpi 96
 
     # Set desktop wallpaper
-    exec_always feh --bg-scale $myconfigfiles/wallpaper/anime/12.jpg
+    exec_always feh --bg-scale $myconfigfiles/wallpaper/anime/14.jpg
 
     ## Run live desktop wallpaper  
     ##   exec_always $myconfigfiles/animated-wallpaper/run_wallpaper 0.001 $myconfigfiles/animated-wallpaper/pixel.gif
