@@ -17,3 +17,4 @@ This is github repository contains my **i3wm** configs.
 
 ## FireFox Midnight-Purple Theme
 ![Example 3](/screenshots/Firefox-Midnight-Purple.png)
+

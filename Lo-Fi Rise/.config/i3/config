@@ -55,7 +55,8 @@
     bindsym $mod+d exec rofi -show drun -lines 12 -eh 1 -width 45 -padding 5 -show-icons
 
     # Lock screen
-    bindsym $mod+l exec i3lock
+    # Update image with: multilockscreen -u <path to image>
+    bindsym $mod+l exec multilockscreen -l
 
     # Open audio controld
     bindsym $mod+Shift+KP_1 exec pavucontrol
