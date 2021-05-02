@@ -1,0 +1,51 @@
+set showcmd
+set wildmenu
+set lazyredraw
+set showmatch
+set incsearch
+
+filetype indent on
+
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+
+set number
+syntax on
+
+set tabstop=4
+set autoindent
+
+set undodir=~/vim_undo_dir
+set undofile
+
+call plug#begin('/etc/vim/plugged')
+
+Plug 'liuchengxu/space-vim-dark'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'mbbill/undotree'
+Plug 'Valloric/YouCompleteMe', { 'do': '/install.py' }  
+Plug 'itchyny/lightline.vim'
+Plug 'vimsence/vimsence'
+
+call plug#end()
+
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
+
+set laststatus=2
+set noshowmode
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+  \ 'colorscheme': 'tokyonight',
+  \ }
