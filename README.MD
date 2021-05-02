@@ -1,6 +1,6 @@
-## dotfiles
+## DotFiles
 
-This is github repository contains my **i3wm** configs.
+Just a backup of my DotFiles. Maybe you won't find anything interesting for u, here.
 
 
 ## 1. dotfiles-first-rise
