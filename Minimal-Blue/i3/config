@@ -9,7 +9,7 @@
     set $mod Mod4
 
     # Set path to config files
-    set $myconfigfiles /home/brutalwizard/Документы/git/DotFiles/DotFiles/Lo-Fi\ Rise/
+    set $myconfigfiles /home/brutalwizard/Документы/git/DotFiles/DotFiles/Minimal-Blue/
 
     # Colors
     set $base00 #101218
@@ -97,7 +97,7 @@
     exec_always xrandr --dpi 96
 
     # Set desktop wallpaper
-    exec_always feh --bg-scale $myconfigfiles/wallpaper/anime/14.jpg
+    exec_always feh --bg-scale $myconfigfiles/wallpapers/minimal/33.png
 
     ## Run live desktop wallpaper  
     ##   exec_always $myconfigfiles/animated-wallpaper/run_wallpaper 0.001 $myconfigfiles/animated-wallpaper/pixel.gif
@@ -131,8 +131,10 @@
 ### Set up windows propertys: ###
 #################################
 
+    for_window [class=".*"] title_format "%class" 
+
     # Disable window title bar
-    for_window [class="^.*"] border pixel 0
+    for_window [class=".*"] border pixel 0
 
     # Remove window borders
     hide_edge_borders both  
