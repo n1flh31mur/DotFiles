@@ -7,12 +7,20 @@ include-file = $HOME/.config/polybar/include-modules.ini
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 31
+height = 35
 offset-y = 0
 bottom = false
 fixed-center = true
 
-;wm-restack = i3
+radius = 7.0
+
+border-top-size = 5
+border-left-size = 5
+border-right-size = 5
+border-bottom-size = 0
+border-color = #00000000
+
+wm-restack = i3
 ;override-redirect = false
 
 scroll-up = next
@@ -25,10 +33,9 @@ foreground = ${colors.fg}
 
 include-file = $HOME/.config/polybar/fonts.ini
 
-modules-left = margin round-left-red session round-right-red margin round-left-blue date round-right-blue margin round-left weather round-right margin 
-modules-center = i3
-modules-right = wlan wired memory cpu pulseaudio battery 
-
+modules-left = margin margin session margin margin i3 margin window-title
+modules-center = date 
+modules-right = weather-icon margin weather-temp margin margin pulseaudio memory cpu margin wlan wired margin battery margin 
 
 ;tray-background = ${colors.bg}
 ;tray-position = right
