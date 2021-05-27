@@ -15,6 +15,6 @@ Just a backup of my DotFiles. Maybe you won't find anything interesting for u, h
 ## Lo-Fi Rise. 
 ![Example 3](/screenshots/Lo-Fi.png)
 
-## Minimal-Blie.
+## Minimal-Blue.
 ![Example 3](/screenshots/Minimal-Blue.png)
 
