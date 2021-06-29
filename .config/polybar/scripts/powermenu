@@ -1,9 +1,0 @@
-#!/bin/bash
-
-MENU="$(rofi -sep "|" -dmenu -i -p 'Power Menu' -location 1 -xoffset 5 -yoffset 10 -width 20 -hide-scrollbar -line-padding 8 -padding 20 -lines 4 <<< " Lock| Logout| Reboot| Shutdown")"
-            case "$MENU" in
-                *Lock) i3lock-fancy ;;
-                *Logout) openbox --exit;;
-                *Reboot) systemctl reboot ;;
-                *Shutdown) systemctl -i poweroff
-            esac
