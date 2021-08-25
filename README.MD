@@ -4,17 +4,19 @@ Just a backup of my DotFiles. Maybe you won't find anything interesting for u, h
 
 
 ## First-rise.
-![Example 3](/screenshots/first-rise.png)
+![Screenshot](/screenshots/first-rise.png)
 
 ## Quiet-Balck.
-![Example 3](/screenshots/Quiet-Black.png)
+![Screenshot](/screenshots/Quiet-Black.png)
 
 ## Quiet-Purple.
-![Example 3](/screenshots/Quiet-Purple.png)
+![Screenshot](/screenshots/Quiet-Purple.png)
 
 ## Lo-Fi Rise. 
-![Example 3](/screenshots/Lo-Fi.png)
+![Screenshot](/screenshots/Lo-Fi.png)
 
 ## Minimal-Blue.
-![Example 3](/screenshots/Minimal-Blue.png)
+![Screenshot](/screenshots/Minimal-Blue.png)
 
+## Dark-Samurai.
+![Screenshot](/screenshots/dark-samurai.png)
