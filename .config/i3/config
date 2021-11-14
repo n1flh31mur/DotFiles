@@ -17,7 +17,10 @@ exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_sh
 font pango:monospace 8
 
 # Set up wallpaper
-exec_always feh --bg-scale $HOME/git/DotFiles/wallpapers/anime/26.jpg
+#exec_always feh --bg-scale $HOME/git/DotFiles/wallpapers/anime/26.jpg
+
+# Set up live wallpaper
+exec_always sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/10.mp4
 
 # Start up polybar
 exec_always sh $HOME/.config/polybar/launch.sh
@@ -68,10 +71,11 @@ bindsym $win+Print exec flameshot gui
 # start dmenu (a program launcher)
 # bindsym $win+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $win+d exec "rofi -modi drun,run -show drun -lines 12 -eh 1 -width 45 -padding 5 -show-icons"
+#bindsym $win+d exec "rofi -modi drun,run -show drun -lines 12 -eh 1 -width 45 -padding 5 -show-icons"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindsym $win+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $win+d exec --no-startup-id i3-dmenu-desktop
+bindsym $win+d exec sh $HOME/git/DotFiles/.config/rofi/launchers/text/launcher.sh
 
 # change focus
 bindsym $win+$left focus left
