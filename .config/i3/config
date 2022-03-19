@@ -20,7 +20,7 @@ font pango:monospace 8
 #exec_always feh --bg-scale $HOME/git/DotFiles/wallpapers/anime/26.jpg
 
 # Set up live wallpaper
-exec_always sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/10.mp4
+exec_always sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/12.mp4
 
 # Start up polybar
 exec_always sh $HOME/.config/polybar/launch.sh
@@ -221,6 +221,9 @@ for_window [class=".*"] border pixel 0
 
 # Hide window borders
 hide_edge_borders both  
+
+# Enable Origin windows to work
+for_window [instance="origin.exe"] floating enable
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
