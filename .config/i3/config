@@ -20,7 +20,7 @@ font pango:monospace 8
 #exec_always feh --bg-scale $HOME/git/DotFiles/wallpapers/anime/26.jpg
 
 # Set up live wallpaper
-exec_always sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/12.mp4
+exec_always sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/13.mp4
 
 # Start up polybar
 exec_always sh $HOME/.config/polybar/launch.sh
@@ -35,6 +35,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Set up monitors
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
+exec --no-startup-id lxsession
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -42,10 +44,18 @@ exec --no-startup-id nm-applet
 # Launch picom
 exec_always picom
 
+# Set multimedia buttons
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Media player controls
+bindsym XF86AudioPlay  exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -178,6 +188,11 @@ bindsym $win+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $win+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Custom binds
+bindsym $win+Shift+KP_Home exec spotify
+bindsym $win+Shift+KP_Up exec sh $HOME/git/DotFiles/scripts/LiveWallpaper/live-wallpaper.sh $HOME/git/DotFiles/live-wallpapers/anime/13.mp4
+bindsym $win+Shift+KP_Prior exec killall -q xwinwrap
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -211,9 +226,6 @@ gaps outer 0
 
 # Set up smart gaps
 smart_gaps inverse_outer
-                    
-bindsym $mod+Shift+KP_7 gaps inner current set 8 
-bindsym $mod+Shift+KP_9 gaps inner current set 0
 
 # Disable window title bar
 for_window [class=".*"] title_format "%class" 
@@ -223,7 +235,8 @@ for_window [class=".*"] border pixel 0
 hide_edge_borders both  
 
 # Enable Origin windows to work
-for_window [instance="origin.exe"] floating enable
+#for_window [instance="Origin.exe"] floating enable
+for_window [instance="^origin.exe$" class="Wine"] floating enable, fullscreen disable
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
