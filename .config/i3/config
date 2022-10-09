@@ -57,7 +57,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Print exec flameshot gui
 
 # Start a rofi
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -theme /home/ginnungagap/.config/rofi/style.rasi 
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
