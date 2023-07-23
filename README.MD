@@ -20,3 +20,6 @@ Just a backup of my DotFiles. Maybe you won't find anything interesting for u, h
 
 ## Dark-Samurai.
 ![Screenshot](/screenshots/dark-samurai.png)
+
+## Doomer.
+![Screenshot](/screenshots/doomer.png)
