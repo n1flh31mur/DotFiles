@@ -20,15 +20,15 @@ temperature_unit = "C" # Units of measurement. That will be showed in UI. Does n
 
 icons_list = {
     "01d": "", # Clear sky day.
-    "01n": "望", # Clear sky night.
+    "01n": "󰖔", # Clear sky night.
     "02d": "", # Few clouds day.
     "02n": "", # Few clouds night.
     "03d": "", # Scattered clouds day.
     "03n": "", # Scattered clouds night.
     "04d": "", # Broken clouds day.
     "04n": "", # Broken clouds night.
-    "09d": "歹", # Shower rain day.
-    "09n": "歹", # Shower rain night.
+    "09d": "", # Shower rain day.
+    "09n": "", # Shower rain night.
     "10d": "", # Rain day.
     "10n": "", # Rain night
     "11d": "", # Thunderstorm day.
